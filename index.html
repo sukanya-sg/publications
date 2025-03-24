@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications - Sukanya Chellappa</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 24px;
+        }
+
+        /* Container for Images */
+        .image-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px;
+        }
+
+        .image-box {
+            width: 180px;
+            height: 180px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+        }
+
+        .image-box:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Header for Publications */
+        .publications {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .publications h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        .publications a {
+            display: inline-block;
+            margin: 10px;
+            text-decoration: none;
+            color: #3498db;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .publications a:hover {
+            color: #1abc9c;
+        }
+
+        /* Animation on page load */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .image-container, .publications {
+            animation: fadeIn 1.5s ease-in;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Publications by Sukanya Chellappa</h1>
+    </header>
+
+    <!-- Image Boxes Section -->
+    <div class="image-container">
+        <div class="image-box" onclick="window.location.href='docs/1.pdf';">
+            <img src="images/1.png" alt="Image 1">
+        </div>
+        <div class="image-box" onclick="window.location.href='docs/1.pdf';">
+            <img src="images/2.png" alt="Image 2">
+        </div>
+        <div class="image-box" onclick="window.location.href='docs/1.pdf';">
+            <img src="images/3.png" alt="Image 3">
+        </div>
+        <div class="image-box" onclick="window.location.href='docs/1.pdf';">
+            <img src="images/4.png" alt="Image 4">
+        </div>
+        <div class="image-box" onclick="window.location.href='docs/1.pdf';">
+            <img src="images/5.png" alt="Image 5">
+        </div>
+        <div class="image-box" onclick="window.location.href='docs/1.pdf';">
+            <img src="images/6.png" alt="Image 6">
+        </div>
+        <div class="image-box" onclick="window.location.href='docs/1.pdf';">
+            <img src="images/7.png" alt="Image 7">
+        </div>
+    </div>
+
+    <!-- Other Publications Section -->
+    <div class="publications">
+        <h2>Other Publications</h2>
+        <a href="https://www.thehindu.com/features/metroplus/The-loop-of-fitness/article16566676.ece" target="_blank">The Loop of Fitness</a>
+        <a href="https://www.thehindu.com/features/metroplus/How-art-patterns-fitness/article16837665.ece" target="_blank">How Art Patterns Fitness</a>
+        <a href="https://www.thehindu.com/features/metroplus/fitness/lsquoJazzrsquoing-up-fitness-levels/article16814153.ece" target="_blank">Jazzing Up Fitness Levels</a>
+        <a href="https://www.thehindu.com/features/metroplus/fitness/Sculpt-your-body-to-stay-fit/article16854286.ece" target="_blank">Sculpt Your Body to Stay Fit</a>
+        <a href="https://www.thehindu.com/features/metroplus/fitness/Hop-to-fitness/article16817064.ece" target="_blank">Hop to Fitness</a>
+        <a href="https://www.thehindu.com/features/metroplus/fitness/Laugh-heartily-for-good-health/article16840271.ece" target="_blank">Laugh Heartily for Good Health</a>
+    </div>
+
+</body>
+</html>
