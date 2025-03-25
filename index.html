@@ -3,153 +3,229 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Publications - Sukanya Chellappa</title>
+    <title>Sukanya Chellappa - CV</title>
     <style>
-        /* Global Styles */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
             color: #333;
+            overflow-x: hidden;
+        }
+        * {
+            box-sizing: border-box;
         }
 
-        header {
-            background-color: #2c3e50;
-            color: white;
+        /* Header Styling */
+        .header {
+            background-color: #3894a8;
+            padding: 20px;
             text-align: center;
-            padding: 20px 0;
-            font-size: 24px;
+            color: #ecf0f1;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
-
-        /* Container for Images */
-        .image-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin: 30px;
-        }
-
-        .image-box {
-            width: 180px;
-            height: 180px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-        }
-
-        .image-box img {
-            width: 100%;
-            height: 100%;
-            border-radius: 8px;
-        }
-
-        .image-box:hover {
-            transform: scale(1.1);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Header for Publications */
-        .publications {
-            text-align: center;
-            margin-top: 40px;
-        }
-
-        .publications h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
-            color: #2c3e50;
-        }
-
-        .publications a {
-            display: inline-block;
-            margin: 10px;
+        .header a {
+            color: #ecf0f1;
+            font-size: 18px;
             text-decoration: none;
-            color: #3498db;
-            font-size: 16px;
+            margin: 0 15px;
             transition: color 0.3s ease;
         }
-
-        .publications a:hover {
-            color: #1abc9c;
+        .header a:hover {
+            color: #f39c12;
         }
 
-        /* Animation on page load */
+        /* Container Layout */
+        .container {
+            display: flex;
+            width: 100%;
+            min-height: 100vh;
+            padding-top: 80px; /* to avoid overlap with fixed header */
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            width: 30%;
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 20px;
+            box-sizing: border-box;
+            height: 100%;
+            transition: transform 0.3s ease-in-out;
+        }
+        .sidebar:hover {
+            transform: translateX(-10px);
+        }
+        .sidebar h1 {
+            font-size: 26px;
+            margin-bottom: 10px;
+            color: #ecf0f1;
+        }
+        .sidebar h2 {
+            font-size: 18px;
+            margin: 20px 0 10px;
+            color: #bdc3c7;
+        }
+        .sidebar p, .sidebar ul {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .sidebar ul {
+            padding-left: 20px;
+        }
+        .sidebar ul li {
+            margin-bottom: 8px;
+        }
+        .sidebar a {
+            color: #ecf0f1;
+            text-decoration: none;
+        }
+        .sidebar a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Content Styling */
+        .content {
+            width: 70%;
+            padding: 40px;
+            background-color: #fff;
+            box-sizing: border-box;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .content h2 {
+            font-size: 22px;
+            color: #2c3e50;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+        .content h3 {
+            font-size: 18px;
+            color: #34495e;
+            margin: 20px 0 5px;
+        }
+        .content p {
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 5px 0 15px;
+        }
+        .content ul {
+            font-size: 14px;
+            line-height: 1.6;
+            padding-left: 20px;
+        }
+        .content ul li {
+            margin-bottom: 8px;
+        }
+
+        /* Animation */
+        .header a {
+            animation: fadeIn 1s ease-out;
+        }
+        .sidebar, .content {
+            animation: slideIn 1s ease-out;
+        }
+        .content h2 {
+            animation: fadeInUp 1.2s ease-out;
+        }
+        
+        /* Keyframe Animations */
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes slideIn {
+            0% { transform: translateX(-50px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
 
-        .image-container, .publications {
-            animation: fadeIn 1.5s ease-in;
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                padding-top: 100px;
+            }
+            .sidebar {
+                width: 100%;
+                transform: translateX(0);
+            }
+            .content {
+                width: 100%;
+                padding: 20px;
+            }
         }
     </style>
 </head>
 <body>
-
-    <header>
-        <h1>Publications by Sukanya Chellappa</h1>
-    </header>
-
-    <!-- Image Boxes Section -->
-    <div class="image-container">
-        <div class="image-box" onclick="window.location.href='docs/1.pdf';">
-            <img src="images/1.png" alt="Image 1">
-        </div>
-        <div class="image-box" onclick="window.location.href='docs/2.pdf';">
-            <img src="images/2.png" alt="Image 2">
-        </div>
-        <div class="image-box" onclick="window.location.href='docs/3.pdf';">
-            <img src="images/3.png" alt="Image 3">
-        </div>
-        <div class="image-box" onclick="window.location.href='docs/4.pdf';">
-            <img src="images/4.png" alt="Image 4">
-        </div>
-        <div class="image-box" onclick="window.location.href='docs/5.pdf';">
-            <img src="images/5.png" alt="Image 5">
-        </div>
-        <div class="image-box" onclick="window.location.href='docs/6.pdf';">
-            <img src="images/6.png" alt="Image 6">
-        </div>
-        <div class="image-box" onclick="window.location.href='docs/7.pdf';">
-            <img src="images/7.png" alt="Image 7">
-        </div>
-        <div class="image-box" onclick="window.location.href='docs/8.pdf';">
-            <img src="images/8.png" alt="Image 7">
-        </div>
-        <div class="image-box" onclick="window.location.href='docs/9.pdf';">
-            <img src="images/9.png" alt="Image 7">
-        </div>
-        <div class="image-box" onclick="window.location.href='docs/10.pdf';">
-            <img src="images/10.png" alt="Image 7">
-        </div>
-        <div class="image-box" onclick="window.location.href='docs/11.pdf';">
-            <img src="images/11.png" alt="Image 7">
-        </div>
-        <div class="image-box" onclick="window.location.href='docs/12.pdf';">
-            <img src="images/12.png" alt="Image 7">
-        </div>
-        <div class="image-box" onclick="window.location.href='docs/13.pdf';">
-            <img src="images/13.png" alt="Image 7">
-        </div>
+    <div class="header">
+        <a href="index.html">Home</a>
+        <a href="publications.html" target="_blank">Publications</a>
     </div>
 
-    <!-- Other Publications Section -->
-    <div class="publications">
-        <h2>Other Publications</h2>
-        <a href="https://www.thehindu.com/features/metroplus/The-loop-of-fitness/article16566676.ece" target="_blank">The Loop of Fitness</a>
-        <a href="https://www.thehindu.com/features/metroplus/How-art-patterns-fitness/article16837665.ece" target="_blank">How Art Patterns Fitness</a>
-        <a href="https://www.thehindu.com/features/metroplus/fitness/lsquoJazzrsquoing-up-fitness-levels/article16814153.ece" target="_blank">Jazzing Up Fitness Levels</a>
-        <a href="https://www.thehindu.com/features/metroplus/fitness/Sculpt-your-body-to-stay-fit/article16854286.ece" target="_blank">Sculpt Your Body to Stay Fit</a>
-        <a href="https://www.thehindu.com/features/metroplus/fitness/Hop-to-fitness/article16817064.ece" target="_blank">Hop to Fitness</a>
-        <a href="https://www.thehindu.com/features/metroplus/fitness/Laugh-heartily-for-good-health/article16840271.ece" target="_blank">Laugh Heartily for Good Health</a>
-    </div>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h1>Sukanya Chellappa</h1>
+            <p>Dynamic Communications Professional</p>
+            <p>Email: <a href="mailto:your.email@example.com">chellappasukanya@gmail.com</a></p>
+            <p>Mobile: 9823-2188</p>
+            
+            <h2>Profile</h2>
+            <p>A dynamic communications professional with extensive experience in Journalism, Public Relations, and Corporate Communications. Passionate about storytelling that drives positive change, I have a strong ability to craft compelling narratives, manage stakeholder relationships, and develop strategic communication plans.</p>
+            
+            <h2>Core Competencies</h2>
+            <ul>
+                <li>✔ Storytelling & Content Creation</li>
+                <li>✔ Media & Public Relations</li>
+                <li>✔ Digital & Social Media Management</li>
+                <li>✔ Advocacy & Crisis Communication</li>
+                <li>✔ Strategic Communication Planning</li>
+                <li>✔ Stakeholder Engagement</li>
+            </ul>
+            
+            <div class="education-spacing">
+                <h2>Education</h2>
+                <p><strong>University of Madras, Chennai, India</strong><br>Master’s Degree in Journalism and Communication, 2003</p>
+                <p><strong>Holy Cross College, Tiruchirappalli, India</strong><br>Bachelor’s Degree in English Literature, 2001</p>
+            </div>
+        </div>
 
+        <!-- Main Content -->
+        <div class="content">
+            <h2>Professional Experience</h2>
+            
+            <h3>Independent Writer</h3>
+            <p><em>August 2012 – 2013</em></p>
+            <p>Engaged in freelancing advertorials for publications such as <a href="https://www.thehindu.com" target="_blank">The Hindu</a>, Tiruchirapalli edition, Tamil Nadu, India, and articles for research organizations.</p>
+            
+            <h3>The New Indian Express, Tiruchirapalli</h3>
+            <p><em>Reporter/Sub-editor, April 2010 – July 2012</em></p>
+            <p>Covered everyday events on health and transport, tracked emerging stories, and wrote news articles and features on social issues, forests, agriculture, religion, music, art, and culture. Contributed feature stories for City Express.</p>
+            
+            <h3>The Hindu, Tiruchirapalli</h3>
+            <p><em>Freelance Journalist, Jan 2009 – March 2010</em></p>
+            <p>Contributed feature stories to two regular columns – ‘Metro Workout’ and ‘The Campus Hangout’ of the ‘Metro Plus,’ the Saturday supplement of <a href="https://www.thehindu.com" target="_blank">The Hindu</a>, Tiruchirapalli edition.</p>
+            
+            <h2>Recognized Skills & Attributes</h2>
+            <ul>
+                <li>Strong written and communication skills</li>
+                <li>Good organization and analytical skills</li>
+                <li>Negotiation, problem-solving, and crisis-management abilities</li>
+                <li>Resourcefulness and ability to meet tight project deadlines</li>
+                <li>Dedicated and trustworthy</li>
+                <li>Integrity in all aspects of professional and personal life</li>
+                <li>Appetite for hard work</li>
+                <li>Open-mindedness to learn</li>
+            </ul>
+        </div>
+    </div>
 </body>
 </html>
